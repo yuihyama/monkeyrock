@@ -1,8 +1,8 @@
 require 'minitest/autorun'
 require './lib/add'
 
-class AddtionTest < Minitest::Test
-  def test_addtion
+class AddTest < Minitest::Test
+  def test_add
     assert_equal 3, 1.add(2)
     assert_equal 0, 0.add(0)
     assert_equal 1, 0.add(1)
