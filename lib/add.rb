@@ -1,10 +1,10 @@
 module Addition
-  def addition(x)
+  def add(x)
     if instance_of?(Integer) || instance_of?(Float)
       send(:+, x)
     else
-      add = proc { |n| n + x }
-      map(&add)
+      pr = proc { |n| n + x }
+      map(&pr)
     end
   end
 end
