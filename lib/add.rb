@@ -1,22 +1,22 @@
 module Addition
   def add(x)
-    if instance_of?(Integer) || instance_of?(Float)
+    if instance_of?(Integer) || instance_of?(Float) || instance_of?(Rational)
       send(:+, x)
-    else
+    elsif instance_of?(Array) || instance_of?(Range)
       pr = proc { |n| n + x }
       map(&pr)
     end
   end
 end
 
-class Integer
-  include Addition
-end
-
-class Float
+class Numeric
   include Addition
 end
 
 class Array
+  include Addition
+end
+
+class Range
   include Addition
 end
