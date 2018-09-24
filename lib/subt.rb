@@ -1,22 +1,22 @@
 module Subtraction
   def subt(x)
-    if instance_of?(Integer) || instance_of?(Float)
+    if instance_of?(Integer) || instance_of?(Float) || instance_of?(Rational)
       send(:-, x)
-    else
+    elsif instance_of?(Array) || instance_of?(Range)
       pr = proc { |n| n - x }
       map(&pr)
     end
   end
 end
 
-class Integer
-  include Subtraction
-end
-
-class Float
+class Numeric
   include Subtraction
 end
 
 class Array
+  include Subtraction
+end
+
+class Range
   include Subtraction
 end
