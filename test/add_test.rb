@@ -31,7 +31,9 @@ class AddTest < Minitest::Test
     assert_output("-2\n") { p (-1.add(-1)) }
     assert_output("-2.0\n") { p (-1.add(-1.0)) }
     assert_output("-2.0\n") { p (-1.0.add(-1.0)) }
+    assert_output("(5/3)\n") { p Rational(2, 3).add(1) }
     assert_output("[3, 4, 5]\n") { p [1, 2, 3].add(2) }
+    assert_output("[2, 3, 4, 5, 6]\n") { p (1..5).add(1) }
     assert_output("3.0\n4.0\n5.0\n") { puts [1, 2, 3].add(2.0) }
     assert_output("[3, 4.0, 5]\n") { print [1, 2.0, 3].add(2), "\n" }
   end
