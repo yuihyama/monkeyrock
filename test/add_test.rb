@@ -19,6 +19,7 @@ class AddTest < Minitest::Test
     assert_equal [3, 4, 5], [1, 2, 3].add(2)
     assert_equal [3, 4.0, 5], [1, 2.0, 3].add(2)
     assert_equal [0, 1, 2], [1, 2, 3].add(-1)
+    assert_equal [2, 3, 4, 5, 6], (1..5).add(1)
 
     assert_raises(NoMethodError) { 'a'.add(1) }
     assert_raises(NoMethodError) { 'a string'.add(1) }
