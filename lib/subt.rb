@@ -1,10 +1,13 @@
 module Subtraction
   def subt(x)
-    if instance_of?(Integer) || instance_of?(Float) || instance_of?(Rational)
-      send(:-, x)
-    elsif instance_of?(Array) || instance_of?(Range)
-      pr = proc { |n| n - x }
-      map(&pr)
+    [Integer, Float, Rational].each do |klass|
+      return send(:-, x) if instance_of?(klass)
+    end
+    [Array, Range].each do |klass|
+      if instance_of?(klass)
+        pr = proc { |n| n - x }
+        return map(&pr)
+      end
     end
   end
 end
