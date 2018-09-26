@@ -23,7 +23,3 @@ end
 class Range
   include Addition
 end
-
-# p 1.add(2)
-# p [1, 2, 3].add(1)
-# p (-1.0).add(-1)
