@@ -27,6 +27,12 @@ class AllTest < Minitest::Test
     # assert_output: puts:
     assert_output("0\n") { puts 1.add(2).subt(3) }
     assert_output("1\n2\n3\n") { puts [1, 2, 3].add(4).subt(4) }
+    assert_output("4\n6\n8\n10\n12\n") { puts (1..5).add(1).multiply(2) }
+    assert_output("2\n3\n") { puts [1, 2].map { |n| n.add(1) } }
+    assert_output("3\n4\n") { puts [1, 2].map { |n| n.add(1) }.add(1) }
+    assert_output("6\n8.0\n") { puts [1, 2.0].map {
+      |n| 1.add(n)
+    }.add(1).multiply(2) }
 
     # assert_output: print:
     assert_output("[1, 2, 3]\n") { print [1, 2, 3].add(4).subt(4), "\n" }
