@@ -19,6 +19,8 @@ class AllTest < Minitest::Test
     # assert_output: p:
     assert_output("0\n") { p 1.add(2).subt(3) }
     assert_output("[1, 2, 3]\n") { p [1, 2, 3].add(4).subt(4) }
+    assert_output("[4, 6, 8, 10, 12]\n") { p (1..5).add(1).multiply(2) }
+    assert_output("[2, 3]\n") { p [1, 2].map { |n| n.add(1) } }
 
     # assert_output: puts:
     assert_output("0\n") { puts 1.add(2).subt(3) }
