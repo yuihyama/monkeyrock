@@ -36,5 +36,11 @@ class AllTest < Minitest::Test
 
     # assert_output: print:
     assert_output("[1, 2, 3]\n") { print [1, 2, 3].add(4).subt(4), "\n" }
+    assert_output("[4, 6, 8, 10, 12]\n") { print (1..5).add(1).multiply(2), "\n" }
+    assert_output("[2, 3]\n") { print [1, 2].map { |n| n.add(1) }, "\n" }
+    assert_output("[3, 4]\n") { print [1, 2].map { |n| n.add(1) }.add(1), "\n" }
+    assert_output("[6, 8.0]\n") { print [1, 2.0].map {
+      |n| 1.add(n)
+    }.add(1).multiply(2), "\n" }
   end
 end
