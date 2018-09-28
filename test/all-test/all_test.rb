@@ -14,6 +14,7 @@ class AllTest < Minitest::Test
     assert_equal [4, 6, 8, 10, 12], (1..5).add(1).multiply(2)
     assert_equal [2, 3], [1, 2].map { |n| n.add(1) }
     assert_equal [3, 4], [1, 2].map { |n| n.add(1) }.add(1)
+    assert_equal [6, 8.0], [1, 2.0].map { |n| 1.add(n) }.add(1).multiply(2)
 
     # assert_output: p:
     assert_output("0\n") { p 1.add(2).subt(3) }
