@@ -1,8 +1,6 @@
 module Subtraction
   def subt(x)
-    return if instance_of?(Hash)
-
-    [Integer, Float, Rational].each do |klass|
+    [Integer, Float, Rational, Complex].each do |klass|
       return send(:-, x) if instance_of?(klass)
     end
 
