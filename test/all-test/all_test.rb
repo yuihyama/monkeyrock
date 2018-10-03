@@ -45,5 +45,6 @@ class AllTest < Minitest::Test
     assert_output("[6, 8.0]\n") { print [1, 2.0].map { |n|
       1.add(n)
     }.add(1).multiply(2), "\n" }
+    assert_output("120\n") { print 1.add(4).factorial, "\n" }
   end
 end
