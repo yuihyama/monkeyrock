@@ -32,8 +32,8 @@ class AllTest < Minitest::Test
     assert_output("4\n6\n8\n10\n12\n") { puts (1..5).add(1).multiply(2) }
     assert_output("2\n3\n") { puts [1, 2].map { |n| n.add(1) } }
     assert_output("3\n4\n") { puts [1, 2].map { |n| n.add(1) }.add(1) }
-    assert_output("6\n8.0\n") { puts [1, 2.0].map {
-      |n| 1.add(n)
+    assert_output("6\n8.0\n") { puts [1, 2.0].map { |n|
+      1.add(n)
     }.add(1).multiply(2) }
 
     # assert_output: print:
@@ -41,8 +41,8 @@ class AllTest < Minitest::Test
     assert_output("[4, 6, 8, 10, 12]\n") { print (1..5).add(1).multiply(2), "\n" }
     assert_output("[2, 3]\n") { print [1, 2].map { |n| n.add(1) }, "\n" }
     assert_output("[3, 4]\n") { print [1, 2].map { |n| n.add(1) }.add(1), "\n" }
-    assert_output("[6, 8.0]\n") { print [1, 2.0].map {
-      |n| 1.add(n)
+    assert_output("[6, 8.0]\n") { print [1, 2.0].map { |n|
+      1.add(n)
     }.add(1).multiply(2), "\n" }
   end
 end
